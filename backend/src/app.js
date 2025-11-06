@@ -5,10 +5,13 @@ import db from "./config/db.js";
 import { register, login } from "./controllers/authController.js";
 import { getSummary } from "./controllers/dashboardController.js";
 import { verifyToken } from "./middleware/authMiddleware.js";
-import { seedAdmin } from "./utils/seedAdmin.js"; // ⬅️ tambahkan ini
+import { seedAdmin } from "./utils/seedAdmin.js"; 
 import clientsRoute from "./routes/clients.js";
 import teamsRoute from "./routes/teams.js";
 import projectsRoute from "./routes/projects.js";
+import financesRoute from "./routes/finances.js";
+// import { getSummary } from "./controllers/dashboardController.js";
+
 
 
 dotenv.config();
@@ -25,6 +28,8 @@ app.use("/uploads", express.static("uploads"));
 app.use("/api/teams", teamsRoute);
 //project
 app.use("/api/projects", projectsRoute);
+//finances
+app.use("/api/finances", financesRoute);
 
 // ping lalu seed
 db.query("SELECT 1", async (err) => {

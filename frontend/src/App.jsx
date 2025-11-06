@@ -6,6 +6,7 @@ import Layout from "./components/Layout.jsx";
 import Clients from "./pages/Clients.jsx";
 import Projects from "./pages/Projects.jsx";
 import Team from "./pages/Team.jsx";
+import Finance from "./pages/Finance.jsx";
 
 function isAuthed() { return !!localStorage.getItem("token"); }
 function Protected({ children }) { return isAuthed() ? children : <Navigate to="/login" replace />; }
@@ -36,6 +37,7 @@ export default function App() {
 
       <Route path="/projects" element={<Protected><Layout><Projects /></Layout></Protected>} />
       <Route path="/team" element={<Protected><Layout><Team /></Layout></Protected>} />
+      <Route path="/finance" element={<Protected><Layout><Finance /></Layout></Protected>} />
       <Route path="*" element={<Navigate to={isAuthed() ? "/" : "/login"} replace />} />
     </Routes>
   );

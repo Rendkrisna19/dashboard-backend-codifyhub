@@ -9,6 +9,7 @@ import {
   FaSignOutAlt,
   FaBolt,
   FaSearch,
+  FaMoneyBillWave,
 } from "react-icons/fa";
 
 // simpan icon sebagai elemen agar mudah dipakai di map()
@@ -17,6 +18,8 @@ const navItems = [
   { to: "/clients",  label: "Clients",   icon: <FaUsers /> },
   { to: "/projects", label: "Projects",  icon: <FaBriefcase /> },
   { to: "/team",     label: "Team",      icon: <FaUserFriends /> },
+  { to: "/finance", label: "Finance", icon: <FaMoneyBillWave /> },
+
   // tambah menu lain di sini...
 ];
 
